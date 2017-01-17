@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "node.h"
+#include "windows.h"
 
 struct book {
 	char title[20];
@@ -11,6 +12,9 @@ struct book {
 
 int main()
 {
+	FILETIME beg,end;
+	GetSystemTimeAsFileTime(&beg);
+
 	List L; 
 	L = malloc(sizeof(struct Node)); // 初始化指针，指向一个分配好的内存地址
 	L->Element = 0;
@@ -33,8 +37,12 @@ int main()
 	insert(5, P);
 	insert(3, P);
 	printfLots(L, P);
-	//find_by_pos(2, L);
 	//printfList(P);
+
+	GetSystemTimeAsFileTime(&end);
+	long dur = 100*(end.dwLowDateTime-beg.dwLowDateTime);
+	printf("程序运行微秒数： %d \n", dur);
+
 }
 
 void printfLots(List L, List P )
