@@ -8,13 +8,15 @@ typedef PtrToNode Position;
 
 typedef int ElementType; 
 
+void create(List head, int size);
+void printfList(List head);
 List MakeEmpty(List L);
 int IsEmpty(List L);
 int IsLast(List L);
 Position Findl(ElementType X, List L);
 void Delete(ElementType X, List L);
 Position FindPrevious (ElementType X, List L);
-void Insert (ElementType X, List L, Position P);
+void insert (ElementType X,  Position P);
 void DeleteList(List L);
 Position Header(List L);
 Position First(List L);
