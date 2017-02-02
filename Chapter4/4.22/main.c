@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// 实现 - AVL树 非懒惰删除
+// 实现 - 写出执行双旋转的函数，执行效率要超过执行两个单旋转 （4.18题就是用两个单旋转函数组合成一个双旋转函数）
 
 int main() {
 	AvlTree t = NULL;
